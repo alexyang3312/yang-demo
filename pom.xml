@@ -5,38 +5,34 @@
   <artifactId>yang-demo</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
-  
+
   <parent>
 	<groupId>org.springframework.boot</groupId>
-	<artifactId>spring-boot-starter-parent</artifactId> 
-	 <version>2.1.6.RELEASE</version> 
+	<artifactId>spring-boot-starter-parent</artifactId>
+    <version>2.3.2.RELEASE</version>
 	<relativePath/>
   </parent>
   
   <dependencies>
   </dependencies>
-  
-  
+
   <modules>
     <module>java-demo</module>
     <module>javaweb-demo</module>
     <module>springfox-demo</module>
     <module>zookeeper-demo</module>
-    <module>redis-demo</module>
     <module>kafka-demo</module>
     <module>quartz-demo</module>
-    <module>springboot2-demo</module>
     <module>shardingjdbc-demo</module>
     <module>mingyisoft-demo</module>
-    <module>yongge-demo</module>
-      <module>shardingjdbc-demo</module>
-      <module>jwt-demo</module>
-      <module>springcloudalibaba-demo</module>
-      <module>alibaba-nacos-discovery-client-common</module>
-      <module>spring-cloud-alibaba-dubbo-provider</module>
+    <!-- <module>yongge-demo</module> -->
+    <module>shardingjdbc-demo</module>
+    <module>jwt-demo</module>
+    <module>spring-cloud-alibaba-dubbo-provider</module>
     <module>spring-cloud-alibaba-dubbo-api</module>
-      <module>spring-cloud-alibaba-dubbo-consumer</module>
-      <module>spring-cloud-alibaba-resttemplate-provider</module>
-    <module>spring-cloud-alibaba-resttemplate-consumer</module>
+    <module>spring-cloud-alibaba-dubbo-consumer</module>
+    <module>spring-cloud-service-provider</module>
+    <module>spring-cloud-service-consumer</module>
+    <module>spring-cloud-gateway</module>
   </modules>
 </project>

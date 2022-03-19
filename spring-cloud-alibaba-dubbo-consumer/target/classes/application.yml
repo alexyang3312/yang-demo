@@ -1,11 +1,13 @@
 server:
-  port: 8899
+  port: 8877
 
 dubbo:
   registry:
     # 挂载到 Spring Cloud 注册中心
     address: spring-cloud://localhost
   cloud:
+    # 该值为服务提供方应用名称
+    # 用于服务消费方订阅服务提供方的应用名称的列表，若需订阅多应用，使用 "," 分割。 不推荐使用默认值为 "*"，它将订阅所有应用。
     subscribed-services: spring-cloud-alibaba-dubbo-server
 
 spring:

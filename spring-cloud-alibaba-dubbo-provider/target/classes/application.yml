@@ -3,26 +3,30 @@ server:
 
 dubbo:
   scan:
-    # dubbo 服务扫描基准包
+    # dubbo 服务扫描基准包，指定 Dubbo 服务实现类的扫描基准包
     base-packages: com.alibaba.cloud.dubbo.bootstrap
   protocol:
-    # dubbo 协议
+    # dubbo 服务暴露的协议配置
+    # dubbo 协议名称
     name: dubbo
     # dubbo 协议端口（ -1 表示自增端口，从 20880 开始）
     port: -1
   registry:
+    # Dubbo 服务注册中心配置
     # 挂载到 Spring Cloud 注册中心
     address: spring-cloud://localhost
 
 spring:
   application:
-    # Dubbo 应用名称
+    # Dubbo 应用名称，Spring 应用名称，用于 Spring Cloud 服务注册和发现。
+    # 该值在 Dubbo Spring Cloud 加持下被视作 dubbo.application.name，因此，无需再显示地配置 dubbo.application.name
     name: spring-cloud-alibaba-dubbo-server
   main:
     # Spring Boot 2.1 需要设定
+    # 在 Spring Boot 2.1 以及更高的版本增加该设定， 因为 Spring Boot 默认调整了 Bean 定义覆盖行为。
     allow-bean-definition-overriding: true
   cloud:
     nacos:
-      # Nacos 服务发现与注册配置
+      # Nacos 服务发现与注册配置，其中子属性 server-addr 指定 Nacos 服务器主机和端口
       discovery:
         server-addr: 127.0.0.1:8848

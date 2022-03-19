@@ -1,0 +1,17 @@
+server:
+  port: 8001
+spring:
+  application:
+    name: service-provider
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+    sentinel:
+      transport:
+        dashboard: localhost:8080
+      scg: # 暂时无效，需要再试
+        fallback: # 服务被流控后返回的响应结果
+          mode: reponse
+          response-status: 426
+          response-body: error request

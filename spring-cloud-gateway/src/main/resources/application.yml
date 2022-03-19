@@ -1,0 +1,35 @@
+server:
+  port: 9999
+spring:
+  application:
+    name: service-gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+    gateway:
+      discovery:
+        locator:
+          enabled: true # 开启表示根据微服务名称映射，就是微服务名称拼接到url中可以直接访问，但是不推荐这么使用容易暴露微服务
+      enabled: true # 默认开启网关true，关闭网关false
+      routes: # 请求转发，路由
+        - id: baidu # 需要全局唯一
+          uri: https://www.baidu.com # 转发到哪里，要访问哪个微服务接口地址
+          predicates: # 断言
+            - Path=/spring-cloud/** # 是否满足断言条件，满足条件则转发，否则禁止访问。
+            # - Path=/spring-cloud
+          filters: # 过滤
+            - StripPrefix=1 # 去除一个地址前缀，原来：localhost:9999/order/find，现在：localhost:9999/find
+            # - PrefixPath=/order # 追加一个地址前缀，原来：localhost:9999/order/find，现在：localhost:9999/order/order/find
+            # - AddRequestHeader=X-Request-Name,nico
+            # - AddResponseHeader=X-Response-Name,nico 追加响应头参数 X-Response-Name=nico，返回的响应头会包含这个参数。
+            # - AddRequestParameter=name,nico123456
+            # 可以给通过网关gateway的请求追加请求头参数、请求参数等等
+            # 以localhost:9999/order/find为例，追加请求头参数就是给这个请求加了个参数X-Request-Name=nico到请求头里，
+            # 后台服务controller中可以从中取出
+        - id: service-provider
+          uri: lb://service-provider # Gateway底层会通过service-provider去Nacos中找到对应地址，lb表示采用负载均衡策略调用
+          predicates:
+            - Path=/provider/**
+          filters: # 过滤
+            - StripPrefix=1
