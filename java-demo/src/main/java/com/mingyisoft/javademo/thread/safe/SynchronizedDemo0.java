@@ -1,4 +1,4 @@
-package com.mingyisoft.javademo.thread.threadsafe.synchronous;
+package com.mingyisoft.javademo.thread.safe;
 
 public class SynchronizedDemo0 implements Runnable {
 	public void run() {

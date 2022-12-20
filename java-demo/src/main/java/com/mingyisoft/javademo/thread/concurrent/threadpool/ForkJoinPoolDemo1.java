@@ -1,4 +1,4 @@
-package com.mingyisoft.javademo.thread.threadpool;
+package com.mingyisoft.javademo.thread.concurrent.threadpool;
 
 import java.util.concurrent.ForkJoinPool;
 import java.util.concurrent.RecursiveAction;

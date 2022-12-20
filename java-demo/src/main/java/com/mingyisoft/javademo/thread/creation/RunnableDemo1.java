@@ -1,4 +1,4 @@
-package com.mingyisoft.javademo.thread;
+package com.mingyisoft.javademo.thread.creation;
 
 public class RunnableDemo1 {
 	public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package com.mingyisoft.javademo.queue.blockingqueue;
+package com.mingyisoft.javademo.thread.concurrent.blockingqueue;
 
 import java.util.concurrent.ArrayBlockingQueue;
 

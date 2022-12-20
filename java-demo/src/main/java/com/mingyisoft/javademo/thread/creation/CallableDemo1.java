@@ -1,4 +1,4 @@
-package com.mingyisoft.javademo.thread;
+package com.mingyisoft.javademo.thread.creation;
 
 import java.util.concurrent.Callable;
 import java.util.concurrent.FutureTask;
@@ -12,7 +12,6 @@ public class CallableDemo1 {
 		Thread t1 = new Thread(ft1);
 		Thread t2 = new Thread(ft2);
 		Thread t3 = new Thread(ft3);
-		
 
 		t1.start();
 		t2.start();
@@ -54,7 +53,7 @@ class CallableDemo implements Callable<Boolean> {
 			return true;
 		} else if(flag == 0){
 			return false;
-		}else {
+		} else {
 			throw new Exception("哇咔咔咔");
 		}
 	}

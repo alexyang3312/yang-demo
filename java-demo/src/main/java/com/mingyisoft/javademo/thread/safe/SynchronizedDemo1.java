@@ -1,10 +1,10 @@
-package com.mingyisoft.javademo.thread.threadsafe.synchronous;
+package com.mingyisoft.javademo.thread.safe;
 
 public class SynchronizedDemo1 {
 	public static void main(String[] args) throws Exception {
 		Item item1 = new Item();
 		item1.count = 1;
-		item1.name = "java编程思想";
+		item1.name = "Java编程思想";
 
 		SynchronizedThread r1 = new SynchronizedThread(item1);
 		// 开启10个线程来购买商品

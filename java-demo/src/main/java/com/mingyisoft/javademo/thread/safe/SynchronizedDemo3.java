@@ -1,4 +1,4 @@
-package com.mingyisoft.javademo.thread.threadsafe.synchronous;
+package com.mingyisoft.javademo.thread.safe;
 
 /**
  * synchronized锁的可重入性

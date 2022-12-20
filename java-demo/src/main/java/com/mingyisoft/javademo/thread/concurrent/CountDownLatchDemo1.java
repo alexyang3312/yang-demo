@@ -1,4 +1,4 @@
-package com.mingyisoft.javademo.thread.control;
+package com.mingyisoft.javademo.thread.concurrent;
 
 import java.util.concurrent.CountDownLatch;
 /**

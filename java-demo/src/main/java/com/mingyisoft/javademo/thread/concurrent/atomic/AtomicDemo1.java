@@ -1,10 +1,10 @@
-package com.mingyisoft.javademo.thread.threadsafe.atomic;
+package com.mingyisoft.javademo.thread.concurrent.atomic;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class AtomicDemo1 {
-    static AtomicInteger a = new AtomicInteger(0);
-//    static int a = 0;
+    static AtomicInteger a = new AtomicInteger(0); // 使用原子类，运行结果是2000000
+//    static int a = 0; // 不使用原子累，运行结果不是2000000
     static final int THREAD_COUNT = 20;
 
     static void increase(){
@@ -27,7 +27,7 @@ public class AtomicDemo1 {
           threads[i].start();
         }
 
-        Thread.sleep(10 * 1000);
+        Thread.sleep(5 * 1000);
         System.out.println(a);
     }
 }

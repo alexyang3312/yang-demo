@@ -6,15 +6,8 @@
  * CreateDate:2016年2月28日 下午2:42:46
  * @author yangmh
  */ 
-package com.mingyisoft.javademo.thread.threadsafe.synchronous;
+package com.mingyisoft.javademo.thread.safe;
 
-/** 
- * Title: XXX<br> 
- * Description: XXX<br> 
- * Company: 韦博英语在线教育部<br> 
- * CreateDate:2016年2月28日 下午2:42:46 
- * @author yangmh 
- */
 public class SynchronizedDemo2 {
 	static int j ;
 	

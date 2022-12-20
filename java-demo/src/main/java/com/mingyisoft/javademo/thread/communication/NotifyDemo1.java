@@ -1,4 +1,4 @@
-package com.mingyisoft.javademo.thread.communicate;
+package com.mingyisoft.javademo.thread.communication;
 
 /**
  * 如果现在有存钱、取钱两个线程，要求不断重复存钱取钱操作，存钱后立刻取钱，

@@ -1,9 +1,9 @@
-package com.mingyisoft.javademo.thread.threadsafe.synchronous;
+package com.mingyisoft.javademo.thread.safe;
 
 public class ThreadLocalDemo1 {
 	public static void main(String[] args) {
 		Person p = new Person();
-		//启动两个线程，两个线程共享person对象
+		// 启动两个线程，两个线程共享person对象
 		new ThreadDemo1(p).start();
 		new ThreadDemo2(p).start();
 	}
@@ -40,7 +40,7 @@ class ThreadDemo2 extends Thread {
 }
 
 class Person {
-	// 定义线程局部变量，每个线程都会保留该变量的一个副本，多个线程之间并不互相印象。
+	// 定义线程局部变量，每个线程都会保留该变量的一个副本，多个线程之间并不互相影响。
 	private ThreadLocal<String> name = new ThreadLocal<>();
 
 	public String getName() {

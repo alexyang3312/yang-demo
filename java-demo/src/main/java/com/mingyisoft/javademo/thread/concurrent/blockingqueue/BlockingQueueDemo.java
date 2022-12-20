@@ -1,10 +1,12 @@
-package com.mingyisoft.javademo.thread.communicate;
+package com.mingyisoft.javademo.thread.concurrent.blockingqueue;
 
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class BlockingQueueDemo {
 	public static void main(String[] args) throws Exception {
+		ConcurrentHashMap a;
 		BlockingQueue<String> bq = new ArrayBlockingQueue<>(2);
 		new Producer(bq).start();
 		new Producer(bq).start();

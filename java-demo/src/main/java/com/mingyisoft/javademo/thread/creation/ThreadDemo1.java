@@ -1,4 +1,4 @@
-package com.mingyisoft.javademo.thread;
+package com.mingyisoft.javademo.thread.creation;
 
 import java.lang.Thread.UncaughtExceptionHandler;
 

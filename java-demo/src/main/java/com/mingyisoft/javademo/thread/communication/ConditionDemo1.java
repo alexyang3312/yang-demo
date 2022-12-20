@@ -1,4 +1,4 @@
-package com.mingyisoft.javademo.thread.communicate;
+package com.mingyisoft.javademo.thread.communication;
 
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
