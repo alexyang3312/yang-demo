@@ -3,7 +3,7 @@ package com.mingyisoft.javademo.thread.creation;
 public class RunnableDemo1 {
 	public static void main(String[] args) {
 		RunnableDemo r1 = new RunnableDemo();
-		Thread t1 = new Thread(r1);
+		Thread t1 = new Thread(new RunnableDemo());
 		Thread t2 = new Thread(r1);
 
 		t1.start();

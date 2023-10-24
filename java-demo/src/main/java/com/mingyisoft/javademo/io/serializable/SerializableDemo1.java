@@ -72,13 +72,13 @@ public class SerializableDemo1 {
 			Teacher tt = (Teacher) ois.readObject();
 			System.out.println(tt.getName()+" "+tt.getAge());
 			/**
-			 * 所有采用序列化机制的java对象都有一个序列化编号（不同于序列化版本号），
-			 * 当程序尝试序列化一个对象时，先检查当前对象是否已经被序列化过，只有从未序列化（本次jvm进程）过的对象，
+			 * 所有采用序列化机制的Java对象都有一个序列化编号（不同于序列化版本号），
+			 * 当程序尝试序列化一个对象时，先检查当前对象是否已经被序列化过，只有从未序列化（在本次JVM进程）过的对象，
 			 * 系统才会将该对象转换成字节序列，如果当前对象已经被序列化过，则自动使用其序列化编号而不是重新
 			 */
-			System.out.println(ss1.getTeacher()==ss2.getTeacher());
-			System.out.println(ss1.getTeacher()==tt);
-			System.out.println(ss2.getTeacher()==tt);
+			System.out.println(ss1.getTeacher()==ss2.getTeacher()); // true
+			System.out.println(ss1.getTeacher()==tt); // true
+			System.out.println(ss2.getTeacher()==tt); // true
 			
 			Student ss3 = (Student) ois.readObject();
 			/**

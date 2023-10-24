@@ -8,6 +8,10 @@ public class HashMapDemo1 {
 		Map m = new HashMap();
 
 		m.put("1", "one");
+		m.put("2", null);
+
+		System.out.println(m.get("1"));
+		// 当查询不存在的key时，返回null
 
 		if (m.containsKey("1")) {
 			System.out.println("1 yes ");

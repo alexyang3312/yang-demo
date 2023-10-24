@@ -11,11 +11,17 @@ public class ArrayListDemo1 {
 		// 判断list是否有元素
 		System.out.println(list1.isEmpty());
 		// 添加list元素
+		// 允许有重复元素
 		list1.add(5);
-		for (int i = 0; i < 5; i++) {
+		for (int i = 0; i <= 5; i++) {
 			list1.add(i);
 		}
+		// 按照插入顺序排序
 		list1.add(2);
+		// 允许多个null
+		list1.add(null);
+		list1.add(null);
+		list1.add(null);
 
 		System.out.println(list1);
 		// 从list获取下标为x的元素

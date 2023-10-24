@@ -1,9 +1,9 @@
 package com.mingyisoft.javademo.jdk8.stream;
 
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class StreamDemo1 {
@@ -47,9 +47,26 @@ public class StreamDemo1 {
 //		并行化操作流只需改变一个方法调用。如果已经有一个 Stream 对象，调用它的 parallel() 方法就能让其拥有并行操作的能力。如果想从一个集合类创建一个流，调用 parallelStream() 就能立即获得一个拥有并行能力的流。
 //		如果你去计算这段代码所花的时间，很可能比不加上 parallel() 方法花的时间更长。这是因为数据并行化会先对数据进行分块，然后对每块数据开辟线程进行运算，这些地方会花费额外的时间。并行化操作只有在 数据规模比较大 或者 数据的处理时间比较长 的时候才能体现出有事，所以并不是每个地方都需要让数据并行化，应该具体问题具体分析。
 
+		System.out.println("----------------------------------------");
+		IntStream intStream = IntStream.of(1, 3, 2, 5, 4, 6);
+		println("of", intStream);
 
+		//从11到16,不包含16
+		intStream=IntStream.range(11,16);
+		//从11到16,包含16
+//        intStream=IntStream.rangeClosed(11,16);
+		println("range", intStream);
 
+		//包含指定的元素,add方法底层也是调用accept方法，然后返回this
+		//返回的int流中的元素顺序与添加顺序一致
+		intStream = IntStream.builder().add(23).add(22).add(21).build();
+		println("builder", intStream);
+	}
 
-				
+	private static void println(String start, IntStream intStream){
+		System.out.println("println ->"+start);
+		intStream.forEach(x->{
+			System.out.println(x);
+		});
 	}
 }

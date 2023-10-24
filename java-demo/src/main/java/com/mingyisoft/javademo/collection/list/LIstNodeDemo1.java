@@ -1,11 +1,14 @@
-package com.mingyisoft.javademo.algorithm;
+package com.mingyisoft.javademo.collection.list;
 
+/**
+ * 链表
+ */
 public class LIstNodeDemo1 {
 	public static void main(String[] argus) {
 		
 		try {
 			
-		}catch(Exception ex) {
+		} catch(Exception ex) {
 			
 		}
 		

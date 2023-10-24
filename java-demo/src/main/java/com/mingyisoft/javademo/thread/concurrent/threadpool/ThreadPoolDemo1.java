@@ -1,13 +1,14 @@
 package com.mingyisoft.javademo.thread.concurrent.threadpool;
 
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.*;
+import java.util.concurrent.locks.Condition;
 
+/**
+ * 不要用Executors的方式来使用线程池，详见阿里巴巴Java手册
+ */
 public class ThreadPoolDemo1 {
 	public static void main(String[] args) {
-		//newCachedThreadPool：
+		// newCachedThreadPool：
 
 		// newFixedThreadPool：
 		ExecutorService pool = Executors.newFixedThreadPool(3);

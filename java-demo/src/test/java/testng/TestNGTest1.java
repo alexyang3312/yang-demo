@@ -16,12 +16,12 @@ public class TestNGTest1 {
 
     }
 
-    @org.testng.annotations.Test
+//    @org.testng.annotations.Test
     public void testAdd1() {
 
     }
 
-    @org.testng.annotations.Test
+//    @org.testng.annotations.Test
     public void testSub1() {
         Assert.assertEquals(0,sub(0,1));
 

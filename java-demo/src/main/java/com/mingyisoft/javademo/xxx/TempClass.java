@@ -1,25 +1,36 @@
 package com.mingyisoft.javademo.xxx;
 
-import java.util.concurrent.Callable;
-import java.util.concurrent.FutureTask;
+import java.util.*;
+import java.util.concurrent.DelayQueue;
+import java.util.concurrent.Executors;
+import java.util.concurrent.locks.ReentrantLock;
 
 public class TempClass {
-    public static void main(String[] argus) throws Exception{
-        FutureTask<Integer> a = new FutureTask(new Callable() {
-            @Override
-            public Object call() throws Exception {
-                System.out.println(1/0);
-                return 999;
-            }
-        });
+    public static void main(String[] args) {
+//        int[] nums = new int[]{1,3,3,3,4,5,6,7,8,8,8,8,8,9,10,10,11,11,12,23,33,33,10,2,2,2,2,2,2,1,1,11};
+//        int[] nums = new int[]{1,3,3,2};
+//        findMax(nums);
 
-        try {
-            Thread t1 = new Thread(a);
-            t1.start();
+        PriorityQueue a;
 
-            System.out.println(a.get());
-        } catch(Exception ex) {
-            System.out.println("aaa");
-        }
     }
+
+    public static void findMax(int[] nums) {
+        int numCount = 1;
+        int tmpCount = 1;
+        int maxNum = 0;
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i] > nums[i - 1]) {
+                tmpCount++;
+            } else if (nums[i] < nums[i - 1]) {
+                if (tmpCount > numCount) {
+                    numCount++;
+                    maxNum = nums[i - 1];
+                }
+                tmpCount = 1;
+            }
+        }
+        System.out.println("最大的数字是：" + maxNum + "，出现次数为：" + numCount);
+    }
+
 }

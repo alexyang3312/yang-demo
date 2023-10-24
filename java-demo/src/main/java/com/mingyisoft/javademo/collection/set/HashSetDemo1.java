@@ -11,7 +11,11 @@ public class HashSetDemo1 {
 		for(int i = 0 ; i < 3 ; i ++){
 			s.add(i+"");
 		}
-		s.add("1");//重复数据
+		s.add("1");// 重复数据插不进去
+		// 重复数据会返回false
+		System.out.println(s.add("1"));
+		s.add(null);// null数据最多只能插进去一个
+		s.add(null);
 		
 		Iterator<String> iter = s.iterator();
 		while(iter.hasNext()){

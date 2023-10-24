@@ -2,7 +2,7 @@ package com.mingyisoft.javademo.outofmemory;
 
 public class OutOfMemoryDemo1 {
 	public static void main(String[] args) {
-		for(int i = 0 ; i < 10000000;i++){
+		while(true){
 			new Thread(new Runnable() {
 	            public void run() {
 	            	for(int n = 0 ; n < 10000000;n++){
