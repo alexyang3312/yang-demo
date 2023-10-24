@@ -18,7 +18,7 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<version.spring>3.2.14.RELEASE</version.spring>
+		<version.spring>6.0.0</version.spring>
 	</properties>
 
 	<distributionManagement>
